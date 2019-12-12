@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
-
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'
 group :production do
@@ -10,8 +10,7 @@ group :production do
 end
 group :development, :test do
 #   Use Device device for functional testing
-#gem 'device'
-     gem 'rspec-rails'
+gem 'rspec-rails'
   # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 end
@@ -52,6 +51,8 @@ group :development do
 end
 
 group :test do
+  # database_cleaner after test
+  gem 'database_cleaner'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
